@@ -1,0 +1,18 @@
+<html>
+    <form action="/Main/picupdone" method="post" enctype="multipart/form-data">
+
+        <center>
+            
+            <input type="hidden" name="supplierid" id="supplierid" value="<%=data.supplierid%>">
+            <h2><%=data.firmname%></h2>
+            <img style="width: 30%; height: 30%; border-radius: 50%;" src="/images/<%=data.logo%>">
+            <br><br><b>SELECT NEW IMAGE FOR LOGO</b>
+
+            <input type="hidden" value="<%=data.logo%>" name="oldimage">
+            <input type="file" required name="logo" accept="image/*" ><br><br>
+            <input type="submit">
+
+        </center>
+
+    </form>
+</html>

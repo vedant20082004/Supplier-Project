@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    </head>
+
+    <style>
+         .usedfont {
+        font-family: "Sedan SC", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 30px;
+        font-weight: bold;
+        /* color: #000; */
+        /* background-color: #303245; */
+        color: rgb(34, 12, 64, 0.8);
+        border-radius: 20px;
+        height: auto;
+        width: 70%;
+    }
+
+    
+
+    .maincontainer {
+        background: rgb(63,94,251);
+        background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);        /* background: #656262; */
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        /* background:  #ffffff; */
+        background: rgb(255,57,144);
+        background: radial-gradient(circle, rgba(255,57,144,1) 0%, rgba(131,188,255,1) 100%);
+        width: auto;
+        height: auto;
+        padding: 11px;
+        border-radius: 20px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.6);
+    }
+
+    .pic
+    {
+        height: 80px;
+        width: 80px;
+        border-radius: 40px;
+    }
+    </style>
+
+<div class="maincontainer">
+    <div class="box">
+
+        <div style="display: flex; flex-direction:row; align-items: center;">
+            <div class="usedfont">
+                <img src="/images/logo1.png" width="20%" height="auto">   PRODUCT DETAILS
+            </div>
+            <div style="margin-left: auto;">
+                <a href="/Main/firstpage"><img src="/images/icon2.png" style="height: 50px; width: 50px; "></a>
+            </div>
+        </div>
+        
+        <table class="table table-striped" style="margin-top:20px">
+
+
+            <tr>
+                
+                
+                <th>Sn.No</th>
+                <th>State/City Name</th>
+                <th>Supplier</th>
+                <th>Address</th>
+                <th>Due Amount</th>
+                <th>Advance</th>
+                <th>Date</th>
+                <th>Firmname</th>
+                <th>Products</th>
+                <th>Logo</th>
+                <th></th>
+                
+
+                
+            </tr>
+            
+            <% data.map((item,i)=>{ %>
+
+            <tr>
+                
+                    <td class="table-info"><%=i+1%></td>   
+                    <td class="table-info"><%=item.statename %><br><%=item.cityname %></td>
+                    <td class="table-info"><%=item.suppliername %></td>
+                    <td class="table-info"><%=item.address %></td>
+                    <td class="table-info"><%=item.dueamount %></td>
+                    <td class="table-info"><%=item.advance %></td>
+                    <td class="table-info"><%=item.advancedate %></td>
+                    <td class="table-info"><%=item.firmname %></td>
+                    <td class="table-info"><%=item.products %></td>
+                    <td class="table-info"><a href="/Main/picUpdate?supplierid=<%=item.supplierid%>&suppliername=<%=item.suppliername%>&logo=<%=item.logo%>"><img class="pic" src='/images/<%=item.logo%>'></a></td>
+
+                    <td class="table-info"><a href="/Main/update?supplierid=<%=item.supplierid%>"><button type="button" class="btn btn-warning">Update</button></a></td>
+
+                    <% }) %>
+                
+
+            </tr>
+
+            
+
+        </table>
+
+
+    </div>
+</div>
+
+
+
+
+        
+        
+    
+</html>
